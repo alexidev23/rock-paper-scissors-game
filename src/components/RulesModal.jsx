@@ -1,0 +1,20 @@
+import { IoCloseOutline } from "react-icons/io5"
+
+export function RulesModal ({ isVisible, onClose }) {
+  if (!isVisible) return null
+  return (
+    <div className='fixed inset-0 bg-gray-950 bg-opacity-70 flex items-center justify-center'>
+
+      <div className='relative bg-white rounded-lg px-8 py-6 w-96'>
+      <button
+          onClick={onClose}
+          className='absolute top-6 right-8'
+        >
+          <IoCloseOutline size={40} className="text-HeaderOutline/55" />
+        </button>
+        <h2 className='text-3xl uppercase font-bold text-DarkText'>Rules</h2>
+        <img src="/image-rules.svg" alt="Reglas del piedra papel y tijera" className="m-auto mt-14" />
+      </div>
+    </div>
+  )
+}
