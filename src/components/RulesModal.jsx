@@ -5,7 +5,7 @@ export function RulesModal ({ isVisible, onClose }) {
   return (
     <div className='fixed inset-0 bg-gray-950 bg-opacity-70 flex items-center justify-center'>
 
-      <div className='relative bg-white rounded-lg px-8 py-6 w-96'>
+      <div className='relative bg-white rounded-lg px-8 py-6 w-96 z-20'>
       <button
           onClick={onClose}
           className='absolute top-6 right-8'

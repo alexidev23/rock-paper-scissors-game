@@ -12,3 +12,38 @@
 body {
   background: radial-gradient(circle,#1f3756,#141539);
 }
+
+.paper {
+  transition: all ease-in-out 0.25s;
+}
+
+.paper:hover {
+  transition: all ease-in-out 0.25s;
+  box-shadow: none;
+  transform: scale(0.9);
+}
+
+.scissors {
+  transition: all ease-in-out 0.25s;
+}
+
+.scissors:hover {
+  transition: all ease-in-out 0.25s;
+  box-shadow: none;
+  transform: scale(0.9);
+}
+
+.rock {
+  transition: all ease-in-out 0.25s;
+}
+
+.rock:hover {
+  transition: all ease-in-out 0.25s;
+  box-shadow: none;
+  transform: scale(0.9);
+}
+
+/*
+- Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
+- Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%) 
+*/
