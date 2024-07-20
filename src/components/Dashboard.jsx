@@ -1,7 +1,7 @@
 import { buttonsGame } from "../constants/buttons";
 import { Button } from "./Button";
 
-export function Dashboard () {
+export function Dashboard ({ onButtonClick }) {
   const buttons = buttonsGame
   return (
     <div className='relative py-10 my-10'>
@@ -12,6 +12,7 @@ export function Dashboard () {
         />
         <Button
           buttons={buttons}
+          onButtonClick={onButtonClick}
         />
       </div>
   )

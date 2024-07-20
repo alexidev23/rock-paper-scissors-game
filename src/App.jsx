@@ -7,11 +7,16 @@ import { PlayGame } from './components/PlayGame';
 
 function App () {
   const [isModalVisible, setModalVisible] = useState(false);
+  const [playGame, setPlayGame] = useState(false);
+  const [selectedButtonId, setSelectedButtonId] = useState(null);
 
   const openModal = () => setModalVisible(true);
   const closeModal = () => setModalVisible(false);
 
-  const playGame = false
+  const handleButtonClick = (buttonId) => {
+    setSelectedButtonId(buttonId);
+    setPlayGame(true);
+  };
 
   return (
     <main className='py-10 h-screen relative'>
@@ -25,10 +30,12 @@ function App () {
       {
         playGame ? (
           <PlayGame 
-            buttonSelected={'1'}
+            buttonSelected={selectedButtonId}
           />
         ) : (
-          <Dashboard />
+          <Dashboard 
+            onButtonClick={handleButtonClick} 
+          />
         )
       }
       <RulesModal
