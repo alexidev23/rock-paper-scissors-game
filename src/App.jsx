@@ -33,16 +33,10 @@ function App () {
   }
 
   return (
-    <main className='py-10 h-screen relative'>
+    <main className='py-10 h-svh relative border'>
       <Header
         score={score}
       />
-      <button
-        onClick={openModal}
-        className='absolute bottom-6 right-8 border text-white px-8 py-1 rounded-lg hover:scale-105'
-      >
-        Rules
-      </button>
       {playGame
         ? (
           <PlayGame buttonSelected={selectedButtonId} playGame={playGame} updateScore={updateScore} />
@@ -54,6 +48,14 @@ function App () {
         isVisible={isModalVisible}
         onClose={closeModal}
       />
+      <div className='w-full flex items-center justify-center sm:justify-end sm:px-10'>
+        <button
+          onClick={openModal}
+          className='border text-white text-2xl font-normal px-14 sm:px-8 py-3 sm:py-1 rounded-lg hover:scale-105'
+        >
+          Rules
+        </button>
+      </div>
     </main>
   )
 }

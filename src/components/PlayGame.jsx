@@ -36,7 +36,7 @@ export function PlayGame ({ buttonSelected, playGame, updateScore }) {
           confetti()
         } else {
           setResult('You lose')
-          updateScore(prevScore => prevScore - 1)
+          updateScore(prevScore => Math.max(0, prevScore - 1))
         }
         setIsModalVisible(true) // Mostrar el modal con el resultado
         setGameFinished(true) // Marcar el juego como terminado
@@ -47,37 +47,37 @@ export function PlayGame ({ buttonSelected, playGame, updateScore }) {
   }, [playGame, buttonSelected, updateScore, gameFinished])
 
   return (
-    <div className='flex w-[700px] m-auto py-10 justify-around text-white uppercase'>
-      <div className='text-center px-4 pb-8'>
-        <h2 className='mb-11'>You Picked</h2>
+    <div className='flex sm:w-[700px] m-auto py-10 justify-around text-white uppercase my-24 sm:my-0'>
+      <div className='text-center px-4 pb-8 flex flex-col-reverse sm:flex-col gap-10'>
+        <h2 className='sm:mb-11'>You Picked</h2>
         {button && (
-          <div key={button.id} className={`w-56 h-56 rounded-full flex items-center justify-center ${button.background}`}>
-            <div className='bg-white w-44 h-44 rounded-full flex items-center justify-center'>
+          <div key={button.id} className={`w-36 sm:w-56 h-36 sm:h-56 rounded-full flex items-center justify-center ${button.background}`}>
+            <div className='bg-white w-24 sm:w-44 h-24 sm:h-44 rounded-full flex items-center justify-center'>
               <img
                 src={`/${button.image}`}
                 alt={button.name}
-                width={80}
+                className='sm:w-20'
               />
             </div>
           </div>
         )}
       </div>
-      <div className='px-4 pb-8 text-center flex flex-col items-center justify-center'>
-        <h2 className='mb-11'>The House Picked</h2>
+      <div className='px-4 pb-8 text-center flex flex-col-reverse sm:flex-col items-center justify-center gap-10'>
+        <h2 className='sm:mb-11'>The House Picked</h2>
         {isLoading
           ? (
-            <div className='bg-[#0d1f3a5e] w-48 h-48 rounded-full flex items-center justify-center'>
+            <div className='bg-[#0d1f3a5e] w-36 sm:w-48 h-36 sm:h-48 rounded-full flex items-center justify-center'>
               <Spinner />
             </div>
             )
           : (
               buttonCpu && (
-                <div key={buttonCpu.id} className={`w-56 h-56 rounded-full flex items-center justify-center ${buttonCpu.background}`}>
-                  <div className='bg-white w-44 h-44 rounded-full flex items-center justify-center'>
+                <div key={buttonCpu.id} className={`w-36 sm:w-56 h-36 sm:h-56 rounded-full flex items-center justify-center ${buttonCpu.background}`}>
+                  <div className='bg-white w-24 sm:w-44 h-24 sm:h-44 rounded-full flex items-center justify-center'>
                     <img
                       src={`/${buttonCpu.image}`}
                       alt={buttonCpu.name}
-                      width={80}
+                      className='sm:w-20'
                     />
                   </div>
                 </div>
