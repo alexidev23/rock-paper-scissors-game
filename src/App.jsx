@@ -33,7 +33,7 @@ function App () {
   }
 
   return (
-    <main className='py-10 h-svh relative border'>
+    <main className='py-10 h-svh relative'>
       <Header
         score={score}
       />
@@ -48,7 +48,7 @@ function App () {
         isVisible={isModalVisible}
         onClose={closeModal}
       />
-      <div className='w-full flex items-center justify-center sm:justify-end sm:px-10'>
+      <div className='w-full flex items-center justify-center sm:justify-end sm:absolute sm:bottom-6 sm:right-12'>
         <button
           onClick={openModal}
           className='border text-white text-2xl font-normal px-14 sm:px-8 py-3 sm:py-1 rounded-lg hover:scale-105'

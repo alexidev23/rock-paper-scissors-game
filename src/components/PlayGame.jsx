@@ -47,9 +47,9 @@ export function PlayGame ({ buttonSelected, playGame, updateScore }) {
   }, [playGame, buttonSelected, updateScore, gameFinished])
 
   return (
-    <div className='flex sm:w-[700px] m-auto py-10 justify-around text-white uppercase my-24 sm:my-0'>
+    <div className='flex sm:w-[700px] m-auto justify-around text-white uppercase my-24 sm:my-10'>
       <div className='text-center px-4 pb-8 flex flex-col-reverse sm:flex-col gap-10'>
-        <h2 className='sm:mb-11'>You Picked</h2>
+        <h2>You Picked</h2>
         {button && (
           <div key={button.id} className={`w-36 sm:w-56 h-36 sm:h-56 rounded-full flex items-center justify-center ${button.background}`}>
             <div className='bg-white w-24 sm:w-44 h-24 sm:h-44 rounded-full flex items-center justify-center'>
@@ -63,7 +63,7 @@ export function PlayGame ({ buttonSelected, playGame, updateScore }) {
         )}
       </div>
       <div className='px-4 pb-8 text-center flex flex-col-reverse sm:flex-col items-center justify-center gap-10'>
-        <h2 className='sm:mb-11'>The House Picked</h2>
+        <h2>The House Picked</h2>
         {isLoading
           ? (
             <div className='bg-[#0d1f3a5e] w-36 sm:w-48 h-36 sm:h-48 rounded-full flex items-center justify-center'>

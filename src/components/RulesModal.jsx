@@ -3,7 +3,7 @@ export function RulesModal ({ isVisible, onClose }) {
   return (
     <div className='fixed inset-0 bg-gray-950 bg-opacity-70 flex items-center justify-center'>
 
-      <div className='relative bg-white rounded-lg px-8 py-20 sm:py-6 w-full h-full sm:w-96 z-20'>
+      <div className='relative bg-white rounded-lg px-8 py-20 sm:py-6 w-full h-full sm:h-[500px] sm:w-96 z-20'>
         <button
           onClick={onClose}
           className='absolute top-10 sm:top-6 right-8 py-2'
