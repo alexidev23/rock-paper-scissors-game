@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { buttonsGame } from '../constants/buttons'
 import Spinner from './Spinner'
 import RestarGameModal from './RestarGameModal' // Asegúrate de tener un componente Modal
+import confetti from 'canvas-confetti'
 
 export function PlayGame ({ buttonSelected, playGame, updateScore }) {
   const [isLoading, setIsLoading] = useState(true)
@@ -32,6 +33,7 @@ export function PlayGame ({ buttonSelected, playGame, updateScore }) {
         ) {
           setResult('You win')
           updateScore(prevScore => prevScore + 1)
+          confetti()
         } else {
           setResult('You lose')
           updateScore(prevScore => prevScore - 1)
